@@ -1,15 +1,31 @@
 import styled from "styled-components";
+import Background from './assets/front.svg'
 
 export const Container = styled.div `
-background-color: black;
+background: url("${Background}");
+background-size: cover;
+`;
+
+export const Image = styled.img `
+
+`;
+
+export const ContainerContent = styled.div `
+
 `;
 
 export const H1 = styled.h1 `
-color: goldenrod;
-padding: 20px;
-margin-left: 50px;
-`
 
-export const Span = styled.span `
-color: orangered;
-`
+`;
+
+export const InputLabel = styled.p `
+
+`;
+
+export const Input = styled.input `
+
+`;
+
+export const Button = styled.button `
+
+`;
