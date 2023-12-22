@@ -33,16 +33,16 @@ height: auto;
 
 export const H1 = styled.h1`
 
-color: #FFF;
+color: #191970;
 font-size: 34px;
 text-align: center;
-margin-bottom: 81px;
+margin-bottom: 60px;
 
 `;
 
 export const InputLabel = styled.p`
 
-color: #EEE;
+color: #191970;
 font-size: 18px;
 font-style: normal;
 font-weight: 700;
@@ -59,8 +59,9 @@ border-radius: 14px;
 background: rgba(255, 255, 255, 0.25);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 border: none;
+outline: none;
 
-color: #FFF;
+color: #000000;
 font-size: 24px;
 font-style: normal;
 font-weight: 400;
@@ -76,7 +77,7 @@ export const Button = styled.button`
 width: 342px;
 height: 74px;
 border-radius: 14px;
-background: var(--Templates-5-Color-1, rgba(0, 0, 0, 0.80));
+background: rgba(0, 0, 0, 0.80);
 border: none;
 
 color: #FFF;
@@ -89,6 +90,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 20px;
-margin-top: 132px;
+margin-top: 40px;
+cursor: pointer;
+&:hover {opacity: 0.8;}
 
+&:active {
+    opacity: 0.6;
+}
 `;

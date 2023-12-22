@@ -11,7 +11,7 @@ const App = () => {
 
     <ContainerContent>
 
-    <H1> Ola !</H1>
+    <H1> Olá !</H1>
 
     <InputLabel>Nome</InputLabel>
     <Input placeholder="Nome"></Input>
