@@ -4,6 +4,9 @@ import People from './assets/people.svg';
 import Arrow from './assets/arrow.svg'
 
 const App = () => {
+  const user = [{ id: Math.random(), name:"Flávio", age: 39 },
+  { id: Math.random(), name:"Rosiane", age: 38 }
+];
   
   return (<Container>
 
@@ -22,8 +25,17 @@ const App = () => {
     <Button>Cadastrar <img alt="seta" src={Arrow}></img>
     </Button>
 
-    </ContainerContent>
+    <ul> 
+      { user.map( (user) => (
+        <li key={user.id}>
+          {user.name} - {user.age}
+        </li>))
+        
+      }
+    </ul>
 
+    </ContainerContent>
+    
     </Container>)
 }
 
