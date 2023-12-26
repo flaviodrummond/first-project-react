@@ -1,13 +1,15 @@
-import React from "react";
+import React,  { useState } from "react";
 import { Container, H1, Image, ContainerContent, InputLabel, Input, Button, User } from "./styles";
 import People from './assets/people.svg';
 import Arrow from './assets/arrow.svg'
 import Trash from './assets/trash.svg'
 
 const App = () => {
-  const users = [{ id: Math.random(), name: "Flávio", age: 39 },
-  { id: Math.random(), name: "Rosiane", age: 38 }
-  ];
+  const [ users, setusers] = useState([]);
+
+  function addNewUser (){
+    setusers([{ id: Math.random(), name: "Flávio", age: 39 }])
+  }
 
   return (<Container>
 
@@ -23,7 +25,7 @@ const App = () => {
       <InputLabel>Idade</InputLabel>
       <Input placeholder="Idade"></Input>
 
-      <Button>Cadastrar <img alt="seta" src={Arrow}></img>
+      <Button onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
       </Button>
 
       <ul>
