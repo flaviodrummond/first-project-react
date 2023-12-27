@@ -10,7 +10,7 @@ const App = () => {
   const [ age, setAge] = useState(); 
 
   function addNewUser (){
-    setusers([{ id: Math.random(), name, age }])
+    setusers([ ...users, { id: Math.random(), name, age }])
   }
 
   function changeName (event){
@@ -35,7 +35,7 @@ const App = () => {
       <Input onChange={changeName} placeholder="Nome"></Input>
 
       <InputLabel >Idade</InputLabel>
-      <Input onChange={changeAge} placeholder="Idade"></Input>
+      <Input type="number" onChange={changeAge} placeholder="Idade"></Input>
 
       <Button onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
       </Button>
