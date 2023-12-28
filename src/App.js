@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import axios from "axios";
 import { Container, H1, Image, ContainerContent, InputLabel, Input, Button, User } from "./styles";
 import People from './assets/people.svg';
 import Arrow from './assets/arrow.svg'
@@ -11,14 +12,19 @@ const App = () => {
   const inputName = useRef();
   const inputAge = useRef();
 
-  function addNewUser() {
+  async function addNewUser() {
+
+    const data = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
+
+    console.log(data)
+
     // setusers([ ...users, { id: Math.random(), name, age }])
 
-    setusers([...users, {
-      id: Math.random(),
-      name: inputName.current.value,
-      age: inputAge.current.value
-    }])
+    // setusers([...users, {
+    //   id: Math.random(),
+    //   name: inputName.current.value,
+    //   age: inputAge.current.value
+    // }])
 
   }
 
