@@ -14,11 +14,11 @@ const App = () => {
 
   async function addNewUser() {
 
-    const data = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
+    const response = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
 
-    console.log(data)
+     console.log(response.data)
 
-    // setusers([ ...users, { id: Math.random(), name, age }])
+    setusers([ ...users, response.data])
 
     // setusers([...users, {
     //   id: Math.random(),
