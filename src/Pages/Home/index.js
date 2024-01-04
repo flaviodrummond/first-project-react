@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
-import { Container, H1, Image, ContainerContent, InputLabel, Input, Button, User } from "./styles";
-import People from './assets/people.svg';
-import Arrow from './assets/arrow.svg'
-import Trash from './assets/trash.svg'
+import { Container, H1, Image, ContainerContent, InputLabel, Input, Button } from "./styles";
+import People from '../../assets/people.svg';
+import Arrow from '../../assets/arrow.svg'
+
 
 const App = () => {
   const [users, setusers] = useState([]);
@@ -24,25 +24,6 @@ const App = () => {
     //   name: inputName.current.value,
     //   age: inputAge.current.value
     // }])
-
-  }
-
-  useEffect(() => {
-    async function fetchUser() {
-      const get = await axios.get("http://localhost:3001/users");
-
-
-      setusers(get.data);
-    }
-
-    fetchUser()
-
-  }, [])
-
-  async function deletUser(userId) {
-    await axios.delete(`http://localhost:3001/users/${userId}`)
-    const newUser = (users.filter(user => user.id !== userId))
-    setusers(newUser)
 
   }
 
@@ -73,15 +54,6 @@ const App = () => {
 
       <Button onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
       </Button>
-
-      <ul>
-        {users.map((user) => (
-          <User key={user.id}>
-            <p>{user.name}</p> <p>{user.age}</p>
-            <button onClick={() => deletUser(user.id)}><img alt="lixeira" src={Trash}></img></button>
-          </User>))
-        }
-      </ul>
 
     </ContainerContent>
 

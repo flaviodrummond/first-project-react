@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Background from './assets/front.svg';
+import Background from '../../assets/front.svg';
 
 
 export const Container = styled.div`
