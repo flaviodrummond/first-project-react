@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { Container, H1, Image, ContainerContent, InputLabel, Input, Button, User } from "./styles";
 import People from './assets/people.svg';
@@ -14,16 +14,10 @@ const App = () => {
 
   async function addNewUser() {
 
-    // const post = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
+    const post = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
 
-    //  console.log(post.data)
 
-    // setusers([ ...users, post.data])
-
-    const get = await axios.get("http://localhost:3001/users");
-
-    
-    setusers (get.data);
+    setusers([ ...users, post.data])
 
     // setusers([...users, {
     //   id: Math.random(),
@@ -32,6 +26,18 @@ const App = () => {
     // }])
 
   }
+
+  useEffect(() => {
+    async function fetchUser() {
+      const get = await axios.get("http://localhost:3001/users");
+
+
+      setusers(get.data);
+    }
+
+    fetchUser()
+
+  }, [])
 
   function deletUser(userId) {
     const newUser = (users.filter(user => user.id !== userId))
