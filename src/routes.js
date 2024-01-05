@@ -5,11 +5,11 @@ import Users from './Pages/Users'
 
 function Routes() {
 
-    return(
+    return (
         <Router>
             <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/Usuarios' component={Users}/>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/usuarios' component={Users} />
             </Switch>
         </Router>
     )

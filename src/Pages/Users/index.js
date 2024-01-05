@@ -58,7 +58,7 @@ const Users = () => {
         }
       </ul>
 
-      <Button><img alt="seta" src={Arrow}></img>Voltar 
+      <Button to="/" ><img alt="seta" src={Arrow}></img>Voltar 
       </Button>
 
     </ContainerContent>
