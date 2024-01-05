@@ -1,31 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, H1, Image, ContainerContent, InputLabel, Input, Button, User } from "./styles";
-import People from '../../assets/people.svg';
+import { Container, H1, Image, ContainerContent, Button, User } from "./styles";
+import Avatar from '../../assets/avatar.svg';
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 
-const App = () => {
+const Users = () => {
   const [users, setusers] = useState([]);
   // const [ name, setName] = useState();
   // const [ age, setAge] = useState(); 
-  const inputName = useRef();
-  const inputAge = useRef();
-
-  async function addNewUser() {
-
-    const post = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
-
-
-    setusers([ ...users, post.data])
-
-    // setusers([...users, {
-    //   id: Math.random(),
-    //   name: inputName.current.value,
-    //   age: inputAge.current.value
-    // }])
-
-  }
 
   useEffect(() => {
     async function fetchUser() {
@@ -58,21 +41,13 @@ const App = () => {
 
   return (<Container>
 
-    <Image alt="logo" src={People}></Image>
+    <Image alt="logo" src={Avatar}></Image>
 
     <ContainerContent>
 
-      <H1> Olá !</H1>
+      <H1> Usuários </H1>
 
-      <InputLabel >Nome</InputLabel>
-      <Input /*onChange={changeName} */
-        ref={inputName} placeholder="Nome"></Input>
-
-      <InputLabel >Idade</InputLabel>
-      <Input type="number" /* onChange={changeAge} */ ref={inputAge} placeholder="Idade"></Input>
-
-      <Button onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
-      </Button>
+      
 
       <ul>
         {users.map((user) => (
@@ -83,9 +58,12 @@ const App = () => {
         }
       </ul>
 
+      <Button><img alt="seta" src={Arrow}></img>Voltar 
+      </Button>
+
     </ContainerContent>
 
   </Container>)
 }
 
-export default App
+export default Users
