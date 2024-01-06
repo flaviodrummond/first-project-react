@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import Background from '../../assets/front.svg';
 
 
@@ -73,7 +73,7 @@ margin-bottom: 34px;
 
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button /* (Link) */`
 
 width: 342px;
 height: 74px;

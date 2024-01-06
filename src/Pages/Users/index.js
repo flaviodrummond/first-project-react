@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import { Container, H1, Image, ContainerContent, Button, User } from "./styles";
 import Avatar from '../../assets/avatar.svg';
 import Arrow from '../../assets/arrow.svg'
@@ -7,6 +8,8 @@ import Trash from '../../assets/trash.svg'
 
 const Users = () => {
   const [users, setusers] = useState([]);
+  const history = useHistory()
+  
   // const [ name, setName] = useState();
   // const [ age, setAge] = useState(); 
 
@@ -29,6 +32,9 @@ const Users = () => {
 
   }
 
+  function goBackPage() {
+    history.push('/')
+  }
   // function changeName (event){
   //   setName(event.target.value)
 
@@ -58,7 +64,7 @@ const Users = () => {
         }
       </ul>
 
-      <Button to="/" ><img alt="seta" src={Arrow}></img>Voltar 
+      <Button onClick={goBackPage} /* to="/" Utilizado pelo React-router-dom {Link} */><img alt="seta" src={Arrow}></img>Voltar 
       </Button>
 
     </ContainerContent>

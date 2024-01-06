@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import Background from '../../assets/background.svg';
 
 
@@ -11,7 +11,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 44px;
-height: 100vh;
+height: 100%;
+min-height: 100vh;
 
 `;
 
@@ -29,7 +30,8 @@ border-radius: 61px 61px 0px 0px;
 background: linear-gradient(157deg, rgba(255, 255, 255, 0.60) 0.84%, rgba(255, 255, 255, 0.60) 0.85%, rgba(255, 255, 255, 0.15) 100%);
 backdrop-filter: blur(45px);
 padding: 50px 36px;
-height: 100vh;
+height: 100%;
+min-height: calc(100vh - 174px);
 
 `;
 
@@ -42,7 +44,7 @@ margin-bottom: 60px;
 
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button /* (Link) */`
 
 width: 342px;
 height: 74px;

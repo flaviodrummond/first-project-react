@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import { Container, H1, Image, ContainerContent, InputLabel, Input, Button } from "./styles";
 import People from '../../assets/people.svg';
 import Arrow from '../../assets/arrow.svg'
@@ -7,6 +8,7 @@ import Arrow from '../../assets/arrow.svg'
 
 const App = () => {
   const [users, setusers] = useState([]);
+  const history = useHistory();
   // const [ name, setName] = useState();
   // const [ age, setAge] = useState(); 
   const inputName = useRef();
@@ -17,7 +19,9 @@ const App = () => {
     const post = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
 
 
-    setusers([ ...users, post.data])
+    setusers([ ...users, post.data]);
+
+    history.push('/usuarios');
 
     // setusers([...users, {
     //   id: Math.random(),
@@ -52,7 +56,7 @@ const App = () => {
       <InputLabel >Idade</InputLabel>
       <Input type="number" /* onChange={changeAge} */ ref={inputAge} placeholder="Idade"></Input>
 
-      <Button to= "/usuarios" onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
+      <Button /* to= "/usuarios" Utilizado pelo React-router-dom {Link} */ onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
       </Button>
 
     </ContainerContent>
