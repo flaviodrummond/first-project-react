@@ -35,15 +35,6 @@ min-height: calc(100vh - 174px);
 
 `;
 
-export const H1 = styled.h1`
-
-color: white;
-font-size: 34px;
-text-align: center;
-margin-bottom: 60px;
-
-`;
-
 export const Button = styled.button /* (Link) */`
 
 width: 342px;

@@ -20,7 +20,7 @@ const App = () => {
     const post = await axios.post("http://localhost:3001/users", { name: inputName.current.value, age: inputAge.current.value, });
 
 
-    setusers([ ...users, post.data]);
+    setusers([...users, post.data]);
 
     history.push('/usuarios');
 

@@ -1,9 +1,9 @@
 import React from "react";
 import { H1 } from "./styles";
 
-function Title() {
+function Title({children}) {
 
-    return <H1></H1>
+    return <H1>{children}</H1>;
 }
 
-export default Title
+export default Title;

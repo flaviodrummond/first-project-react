@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Container, H1, Image, ContainerContent, Button, User } from "./styles";
+import { Container, Image, ContainerContent, Button, User } from "./styles";
+import H1 from '../../Components/Title';
 import Avatar from '../../assets/avatar.svg';
-import Arrow from '../../assets/arrow.svg'
-import Trash from '../../assets/trash.svg'
+import Arrow from '../../assets/arrow.svg';
+import Trash from '../../assets/trash.svg';
 
 const Users = () => {
   const [users, setusers] = useState([]);
