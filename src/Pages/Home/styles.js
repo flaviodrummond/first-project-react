@@ -32,15 +32,6 @@ height: auto;
 
 `;
 
-export const H1 = styled.h1`
-
-color: #191970;
-font-size: 34px;
-text-align: center;
-margin-bottom: 60px;
-
-`;
-
 export const InputLabel = styled.p`
 
 color: #191970;
