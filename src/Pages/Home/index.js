@@ -1,8 +1,9 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import H1 from '../../Components/Title';
-import { Container, Image, ContainerContent, InputLabel, Input, Button } from "./styles";
+import H1 from "../../Components/Title";
+import ContainerContent from "../../Components/ContainerContent";
+import { Container, Image, InputLabel, Input, Button } from "./styles";
 import People from '../../assets/people.svg';
 import Arrow from '../../assets/arrow.svg'
 
