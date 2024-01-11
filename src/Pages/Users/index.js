@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { Container, Image, ContainerContent, Button, User } from "./styles";
+import ContainerContent from "../../Components/ContainerContent";
+import { Container, Image, Button, User } from "./styles";
 import H1 from '../../Components/Title';
 import Avatar from '../../assets/avatar.svg';
 import Arrow from '../../assets/arrow.svg';
@@ -50,7 +51,7 @@ const Users = () => {
 
     <Image alt="logo" src={Avatar}></Image>
 
-    <ContainerContent>
+    <ContainerContent isBlur={true}>
 
       <H1> Usuários </H1>
 

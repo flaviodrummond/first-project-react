@@ -10,4 +10,9 @@ background: linear-gradient(157deg, rgba(255, 255, 255, 0.60) 0.84%, rgba(255, 2
 padding: 50px 36px;
 height: auto;
 
+${ props => props.isBlur &&
+        `backdrop-filter: blur(45px);
+        min-height: calc(100vh - 174px);`
+    }
+
 `;
