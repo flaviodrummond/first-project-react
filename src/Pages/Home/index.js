@@ -3,7 +3,8 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import H1 from "../../Components/Title";
 import ContainerContent from "../../Components/ContainerContent";
-import { Container, Image, InputLabel, Input, Button } from "./styles";
+import Button from "../../Components/Button";
+import { Container, Image, InputLabel, Input } from "./styles";
 import People from '../../assets/people.svg';
 import Arrow from '../../assets/arrow.svg'
 
@@ -58,7 +59,7 @@ const App = () => {
       <InputLabel >Idade</InputLabel>
       <Input type="number" /* onChange={changeAge} */ ref={inputAge} placeholder="Idade"></Input>
 
-      <Button /* to= "/usuarios" Utilizado pelo React-router-dom {Link} */ onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
+      <Button isBack={true} /* to= "/usuarios" Utilizado pelo React-router-dom {Link} */ onClick={addNewUser} >Cadastrar <img alt="seta" src={Arrow}></img>
       </Button>
 
     </ContainerContent>

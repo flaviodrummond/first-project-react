@@ -53,30 +53,5 @@ margin-bottom: 34px;
 
 `;
 
-export const Button = styled.button /* (Link) */`
 
-width: 342px;
-height: 74px;
-border-radius: 14px;
-background: rgba(0, 0, 0, 0.80);
-border: none;
-
-color: #FFF;
-font-size: 17px;
-font-style: normal;
-font-weight: 700;
-line-height: 28px;
-
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 20px;
-margin-top: 130px;
-cursor: pointer;
-&:hover {opacity: 0.8;}
-
-&:active {
-    opacity: 0.6;
-}
-`;
 
